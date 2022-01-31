@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Gentleman from "./Components/Gentleman";
+import gentlemen from "./data/gentlemen";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div class="container">
+      <header class="main-header">
+        <h1 class="main-title">The pointing gentlemen</h1>
       </header>
+      <section class="controls">
+        <p class="info">0 gentlemen pointing at you</p>
+        <button class="button button--select">Select all</button>
+      </section>
+      <main class="main">
+        <ul class="gentlemen">
+          <Gentleman datos={gentlemen[0]} />
+
+          <Gentleman datos={gentlemen[1]} />
+          <Gentleman datos={gentlemen[2]} />
+        </ul>
+      </main>
     </div>
   );
 }
